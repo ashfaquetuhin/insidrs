@@ -1,5 +1,6 @@
 import { Button, Container, Image, Input, Text } from "@nextui-org/react";
 import Link from "next/link";
+import router from "next/router";
 import { useState } from "react";
 
 const SignUp = () => {
@@ -15,9 +16,9 @@ const SignUp = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    console.log({ value });
-  };
+  // const handleSubmit = (e) => {
+  //   console.log({ value });
+  // };
 
   return (
     <Container
@@ -31,7 +32,14 @@ const SignUp = () => {
         gap: 20,
       }}
     >
-      <Container css={{ display: "flex", width: "500px" }}>
+      <Container
+        css={{
+          display: "flex",
+          maxWidth: "500px",
+          flexWrap: "nowrap",
+          gap: 10,
+        }}
+      >
         <Container
           css={{
             maxWidth: "400px",
@@ -55,7 +63,13 @@ const SignUp = () => {
         </Container>
         <Image width="20px" src="/assets/faq.png" alt="faq" />
       </Container>
-      <Button onClick={handleSubmit}>Register</Button>
+      <Button
+        onClick={() => {
+          router.push("/verify");
+        }}
+      >
+        Register
+      </Button>
     </Container>
   );
 };
