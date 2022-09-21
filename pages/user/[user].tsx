@@ -1,5 +1,4 @@
 import { Container, Text } from "@nextui-org/react";
-import { User } from "@supabase/supabase-js";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { supabase } from "../../utils/supabaseClient";

@@ -16,10 +16,6 @@ export default async function registerUser(
     password: password,
   });
 
-  const user = await supabase.auth.getUser();
-
-  console.log({ user, data });
-
   //@ts-ignore
 
   if (error) return res.status(401).json({ error: error.message });
